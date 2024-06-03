@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/projects', [PortfolioController::class,'index'])->name('projects');
    
-
+    
 Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
