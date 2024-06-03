@@ -21,7 +21,7 @@ class PortfolioSeeder extends Seeder
             $new_portfolio->working_hours = $faker->randomDigitNot(0);
             $new_portfolio->co_workers = $faker->name();
             $new_portfolio->save();
-        }
+        }   
 
     }
 }

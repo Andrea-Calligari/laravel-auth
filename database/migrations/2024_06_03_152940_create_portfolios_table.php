@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->integer('working_hours');
             $table->string('co_workers');
-            $table->timestamps();
+            $table->timestamps();   
         });
     }
 
