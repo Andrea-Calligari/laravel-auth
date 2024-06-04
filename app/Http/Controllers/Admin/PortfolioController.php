@@ -23,7 +23,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.portfolios.create');
+        return view('admin.projects.create');
     }
 
     /**
@@ -33,8 +33,15 @@ class PortfolioController extends Controller
     {
 
         //validazione campi 
+        $request->validate([
+            'project_name' => 'required|max:200|min:2 ',
+            'description' => 'nullable|max:2000',
+            'working_hours' => 'required|integer',
+            'co_workers' => 'required|max:1000',
+        ]);
 
         $form_data = $request->all();
+
         $new_project =  Portfolio::create($form_data);
         return to_route('admin.portfolios.show', $new_project);
     }
@@ -60,7 +67,12 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        $form_data = $request->all();
+        $portfolio->fill($form_data);
+        $portfolio->save();
+        //oppure - fa subito il fill()e il salvataggio- save()
+        //$portfolio->update();
+        return to_route('admin.portfolios.show',$portfolio);
     }
 
     /**

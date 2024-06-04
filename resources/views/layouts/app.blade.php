@@ -42,9 +42,10 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto d-flex gap-3">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.portfolios.index') }}">{{ __('Projects') }}</a>
+                            <a class="nav-link" href="{{ route('admin.portfolios.create') }}">{{ __('New Project') }}</a>
                         </li>
                     </ul>
 

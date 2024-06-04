@@ -12,8 +12,11 @@
         <div class="card-body">
             <div>Working Hours: {{$portfolio->working_hours}}</div>
             <div>Co-Workers {{$portfolio->co_workers}}</div>
-            <a class="btn btn-outline-warning" href="{{ route('admin.portfolios.edit', $portfolio)}}">Edit</a>
-            <button class="btn btn-outline-danger" id="trash">Trash</button>
+            <div id="form">
+                <a class="btn btn-outline-warning" href="{{ route('admin.portfolios.edit', $portfolio)}}">Edit</a>
+                <button class="btn btn-outline-danger" id="trash">Trash</button>
+
+            </div>
             <script>
                 let trash = document.getElementById('trash')
 
