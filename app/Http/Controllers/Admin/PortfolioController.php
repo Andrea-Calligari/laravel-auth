@@ -14,7 +14,8 @@ class PortfolioController extends Controller
     public function index()
     {
         $projects = Portfolio::all();
-        return view('portfolio.projects',compact('projects'));
+
+        return view('admin.projects.index',compact('projects'));
     }
 
     /**
@@ -22,7 +23,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.portfolios.create');
     }
 
     /**
@@ -30,7 +31,12 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //validazione campi 
+
+        $form_data = $request->all();
+        $new_project =  Portfolio::create($form_data);
+        return to_route('admin.portfolios.show', $new_project);
     }
 
     /**
@@ -38,7 +44,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('admin.projects.show',compact('portfolio'));
     }
 
     /**
@@ -46,7 +52,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return view('admin.projects.edit',compact('portfolio'));
     }
 
     /**
@@ -62,6 +68,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $portfolio->delete();
+        return to_route('admin.portfolios.index');
     }
 }

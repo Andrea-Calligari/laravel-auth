@@ -11,13 +11,13 @@
       <th scope="col">Co-workers</th>
     </tr>
   </thead>
-  @foreach($projects as $proj)
+  @foreach($projects as $project)
   <tbody>
     <tr>
-    <th scope="row">{{$proj->project_name}}</th>
-    <td>{{$proj->description}}</td>
-    <td>{{$proj->working_hours}}</td>
-    <td>{{$proj->co_workers}}</td>
+    <th scope="row"> <a href="{{route('admin.portfolios.show',$project)}}">{{$project->project_name}}</a></th>
+    <td>{{$project->description}}</td>
+    <td>{{$project->working_hours}}</td>
+    <td>{{$project->co_workers}}</td>
 
     </tr>
 

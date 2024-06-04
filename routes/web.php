@@ -19,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', [PortfolioController::class,'index'])->name('projects');
-   
+
+
     
 Route::middleware(['auth', 'verified'])
     ->name('admin.')
@@ -31,7 +31,7 @@ Route::middleware(['auth', 'verified'])
             return view('admin.dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard');
        
-        Route::resource('posts', PortfolioController::class);
+        Route::resource('portfolios', PortfolioController::class);
 
     });
 
