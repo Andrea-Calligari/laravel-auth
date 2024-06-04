@@ -31,7 +31,7 @@
                 <input type="text" name="co_workers" class="form-control" id="co_workers"
                     placeholder="who is yours co-workers " value="{{old('co_workers')}}">
             </div>
-            <button class="btn btn-outline-success">Generate</button>
+            <button class="btn btn-outline-success">Create</button>
         </form>
         @if ($errors->any())
             <div class="alert alert-danger">
